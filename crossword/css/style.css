@@ -1,0 +1,62 @@
+
+tr{
+    margin: auto;
+	padding: 0;
+	border-collapse: collapse;
+}
+td{
+	height: 30px;
+	width: 30px;
+}
+#leftBox{
+	margin: auto;
+	float: left;
+	transform: scale(0.8);
+	margin-top: -40px;
+	margin-left: -80px; 
+}
+#rightBox{
+	margin: auto;
+	padding: 30px;
+}
+.butt{
+	height:50px;
+	width: 107px;
+	font-size: 16px;
+	background-color: #e7e7e7;
+}
+#puzzel{
+	margin: 0px;
+	text-align: center;
+	padding: 0;
+	border-collapse: collapse;
+	border: 2px solid black;
+	
+}
+.inputBox{
+		width: 40px;
+		height:40px;
+		border: 1px solid black;
+		text-align: center;
+		font-size: 20px;
+}
+#hintsTable{
+	float: right;
+	width: 600px;
+    margin-top: 40px;
+	margin-right: 10%;
+	font-size: 20px;
+	border: 1px solid white;
+	background-color: white;
+	opacity: 0.6;
+}
+th{
+	font-size: 30px;
+    text-decoration: underline;
+}
+body{
+	background-image: url("../images/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:right;
+}

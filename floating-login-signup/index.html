@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>How to Design Login & Registration Form Transition</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="cont">
+    <div class="form sign-in">
+      <h2>Sign In</h2>
+      <form id="signinForm">
+        <div class="form-group">
+      <label>
+        <span>Email Address</span>
+        <input type="email" name="emailid" id="emailid">
+      </label>
+    </div>
+    <div class="form-group">
+      <label>
+        <span>Password</span>
+        <input type="password" name="pswd" id="pswd">
+      </label></div>
+      <button class="submit" type="submit">Sign In</button></form>
+      <p class="forgot-pass">Forgot Password ?</p>
+
+      <div class="social-media">
+        <ul>
+          <li><img src="images/facebook.png"></li>
+          <li><img src="images/twitter.png"></li>
+          <li><img src="images/linkedin.png"></li>
+          <li><img src="images/instagram.png"></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub-cont">
+      <div class="img">
+        <div class="img-text m-up">
+          <h2>New here?</h2>
+          <p>Sign up and discover great amount of new opportunities!</p>
+        </div>
+        <div class="img-text m-in">
+          <h2>One of us?</h2>
+          <p>If you already has an account, just sign in. We've missed you!</p>
+        </div>
+        <div class="img-btn">
+          <span class="m-up">Sign Up</span>
+          <span class="m-in">Sign In</span>
+        </div>
+      </div>
+      <div class="form sign-up">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+          <div class="form-group">
+        <label for="name">
+          <span>Name</span>
+          <input type="text" name="name" id="name" required="true">
+        </label></div>
+        <div class="form-group">
+        <label for="email">
+          <span>Email</span>
+          <input type="email" name="email" id="email">
+        </label></div>
+        <div class="form-group">
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" id="password">
+        </label></div>
+        <div class="form-group">
+        <label for="password">
+          <span>Confirm Password</span>
+          <input type="password" name="password2" id="password2">
+        </label></div>
+        <button type="submit" class="submit">Sign Up Now</button></form>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+  <script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyBIxNYM4iuaTEbtBsCxKBVp1fCQxbNi5M8",
+    authDomain: "prajna-f231e.firebaseapp.com",
+    databaseURL: "https://prajna-f231e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "prajna-f231e",
+    storageBucket: "prajna-f231e.appspot.com",
+    messagingSenderId: "896369235185",
+    appId: "1:896369235185:web:b9e7ac748f1e7a9131c550"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);</script>
+
+<script type="text/javascript" src="script.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

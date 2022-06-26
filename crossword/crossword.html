@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cross word Puzzel</title>
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+
+<script>
+//Globals
+var currentTextInput;
+var puzzelArrayData;
+//Loads the Crossword
+function initializeScreen(){
+	var puzzelTable = document.getElementById("puzzel");
+	puzzelArrayData = preparePuzzelArray();
+	for ( var i = 0; i < puzzelArrayData.length ; i++ ) {
+		var row = puzzelTable.insertRow(-1);
+		var rowData = puzzelArrayData[i];
+		for(var j = 0 ; j < rowData.length ; j++){
+			var cell = row.insertCell(-1);
+			if(rowData[j] != 0){
+				var txtID = String('txt' + '_' + i + '_' + j);
+				cell.innerHTML = '<input type="text" class="inputBox" maxlength="1" style="text-transform: lowercase" ' + 'id="' + txtID + '" onfocus="textInputFocus(' + "'" + txtID + "'"+ ')">';
+			}else{
+				
+			}
+		}
+	}
+	addHint();
+}
+//Adds the hint numbers
+function addHint(){
+	document.getElementById("txt_0_11").placeholder = "1";
+	document.getElementById("txt_1_4").placeholder = "2";
+	document.getElementById("txt_1_10").placeholder = "3";
+	document.getElementById("txt_3_6").placeholder = "4";
+	document.getElementById("txt_3_11").placeholder = "5";
+	document.getElementById("txt_4_0").placeholder = "6";
+    document.getElementById("txt_5_10").placeholder = "7";
+    document.getElementById("txt_5_13").placeholder = "8";
+    document.getElementById("txt_6_3").placeholder = "9";
+    document.getElementById("txt_7_2").placeholder = "10";
+    document.getElementById("txt_7_18").placeholder = "11";
+    document.getElementById("txt_8_16").placeholder = "12";
+    document.getElementById("txt_9_4").placeholder = "13";
+    document.getElementById("txt_9_10").placeholder = "14";
+    document.getElementById("txt_9_13").placeholder = "15";
+    document.getElementById("txt_10_2").placeholder = "16";
+    document.getElementById("txt_10_8").placeholder = "17";
+    document.getElementById("txt_14_10").placeholder = "18";
+    document.getElementById("txt_14_12").placeholder = "19";
+    document.getElementById("txt_18_9").placeholder = "20";
+}
+//Stores ID of the selected cell into currentTextInput
+function textInputFocus(txtID123){
+	currentTextInput = txtID123;
+}
+//Returns Array
+function preparePuzzelArray(){
+var items = [   [  0,  0,    0,   0,   0,   0,   0,   0, 0, 0,   0, 'm',   0,   0,   0,   0, 0, 0, 0, 0],
+				[  0,  0,    0,   0,  'v',  0,   0,   0, 0, 0, 'j', 'a', 'n', 'a', 'k', 'a', 0, 0, 0, 0],
+				[  0,  0,    0,   0,   'a', 0,   0,   0, 0, 0,   0, 'n',   0,   0,   0,   0, 0, 0, 0, 0],
+				[  0,  0,    0,   0,   'l', 0, 'p',   0, 0, 0,   0, 't', 'h', 'r', 'e', 'e', 0, 0, 0, 0],
+				['t', 'u', 'l', 's', 'i', 'd', 'a', 's', 0, 0,   0, 'h',   0,   0,   0,   0, 0, 0, 0, 0],
+				[  0,  0, 0, 0, 0, 0, 'n', 0, 0, 0, 'j', 'a', 't', 'a', 'y', 'u', 0, 0, 0, 0],
+				[0, 0, 0, 'l', 0, 0, 'c', 0, 0, 0, 0, 'r', 0, 'y', 0, 0, 0, 0, 0, 0],
+				[0, 0, 's', 'u', 'r', 'p', 'h', 'a', 'n', 'a', 'k', 'a', 0, 'o', 0, 0, 0, 0, 'b', 0],
+				[0, 0, 0, 'v', 0, 0, 'a', 0, 0, 0, 0,   0, 0, 'd', 0, 0, 'k', 0, 'h', 0],
+				[0, 0, 0, 0, 'f', 0, 'v', 0, 0, 0, 'v',   0, 0, 'h', 'a', 'n', 'u', 'm', 'a', 'n'],
+				[0, 0, 'd', 'r', 'o', 'n', 'a', 'g', 'i', 'r', 'i',   0, 0, 'y', 0, 0, 's', 0, 'r', 0],
+                [0, 0, 0, 0, 'u', 0, 't', 0, 'n', 0, 'b',   0, 0, 'a', 0, 0, 'h', 0, 'a', 0],
+				[0, 0, 0, 0, 'r', 0, 'i', 0, 'd', 0, 'h',   0, 0, 0, 0, 0, 0, 0, 't', 0],
+				[0, 0, 0, 0, 't', 0, 0, 0, 'r', 0, 'i',   0, 0, 0, 0, 0, 0, 0, 'a', 0],
+				[0, 0, 0, 0, 'e', 0, 0, 0, 'a', 0, 's',   'i', 't', 'a', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 'e', 0, 0, 0, 'j', 0, 'h',   0, 'w', 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 'n', 0, 0, 0, 'i', 0, 'a',   0, 'o', 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0, 't', 0, 'n',  0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0, 0, 'l', 'a',  'k', 's', 'h', 'm', 'a', 'n', 'a', 0, 0],
+			];
+return items;
+}
+//Clear All Button
+function clearAllClicked(){
+	currentTextInput = '';
+	var puzzelTable = document.getElementById("puzzel");
+	puzzelTable.innerHTML = '';
+    initializeScreen();
+}
+//Check button
+function checkClicked(){
+	for ( var i = 0; i < puzzelArrayData.length ; i++ ) {
+		var rowData = puzzelArrayData[i];
+		for(var j = 0 ; j < rowData.length ; j++){
+			if(rowData[j] != 0){
+				var selectedInputTextElement = document.getElementById('txt' + '_' + i + '_' + j);
+				if(selectedInputTextElement.value != puzzelArrayData[i][j]){
+					selectedInputTextElement.style.backgroundColor = 'red';
+					
+				}else{
+					selectedInputTextElement.style.backgroundColor = 'white';
+				}
+			}
+		}
+	}
+}
+//Clue Button
+function clueClicked(){
+	if (currentTextInput != null){
+		var temp1 = currentTextInput;
+		var token = temp1.split("_");
+		var row = token[1];
+		var column = token[2];
+		document.getElementById(temp1).value = puzzelArrayData[row][column];
+		//checkClicked();
+	}
+}
+//Solve Button
+function solveClicked(){
+	if (currentTextInput != null){
+		var temp1 = currentTextInput;
+		var token = temp1.split("_");
+		var row = token[1];
+		var column = token[2];
+		
+		// Print elements on top
+		for(j = row; j >= 0; j--){
+			if(puzzelArrayData[j][column] != 0){
+				document.getElementById('txt' + '_' + j + '_' + column).value = puzzelArrayData[j][column];
+				}else break;
+		}
+		// Print elements on right
+		for(i = column; i< puzzelArrayData[row].length; i++){
+			if(puzzelArrayData[row][i] != 0){
+				document.getElementById('txt' + '_' + row + '_' + i).value = puzzelArrayData[row][i];
+				}else break;
+		}
+		
+		// Print elements below
+		for(m = row; m< puzzelArrayData.length; m++){
+			if(puzzelArrayData[m][column] != 0){
+				document.getElementById('txt' + '_' + m + '_' + column).value = puzzelArrayData[m][column];
+				}else break;
+		}
+		// Print elements on left
+		for(k = column; k >= 0; k--){
+			if(puzzelArrayData[row][k] != 0){
+				document.getElementById('txt' + '_' + row + '_' + k).value = puzzelArrayData[row][k];
+				}else break;
+		}
+		// Done!
+		
+	}
+}
+</script>
+</head>
+<body onload="initializeScreen()">
+<div style="display: flex;">
+<div id="leftBox">
+<table id="puzzel" >
+
+</table>
+<div>
+<table id="rightBox">
+	<tr><td><input class="butt"  type="submit" value="Clear All" onclick="clearAllClicked()"></td>
+	<td><input class="butt"  type="submit" value="Check" onclick="checkClicked()"></td>
+	<td><input class="butt"  type="submit" value="Solve" onclick="solveClicked()"></td>
+	<td><input class="butt"  type="submit" value="Clue" onclick="clueClicked()"></td></tr>
+</table>
+</div>
+</div>
+<div>
+<table id="hintsTable">
+		<tr id="head">
+			<th><strong>Across</strong></th>
+		</tr>
+		<tr>
+			<td>3. King of Mithila and father of Sita</td>
+		</tr>
+		<tr>
+			<td>5. Number of wives of King Dasharatha</td>
+		</tr>
+		<tr>
+			<td>6. Poet who wrote ramayana in Hindi</td>
+		<tr>
+			<td>7. Bird who dies trying to save Sita from Ravana</td>
+		</tr>
+		<tr>
+			<td>10. Sister of King of Lanka</td>
+		</tr>
+		<tr>
+			<td>15. Monkey who lights fire to Lanka</td>
+		</tr>
+		<tr>
+			<td>16. Mountain Hanuman carried for Sanjeevni Booti</td>
+		</tr>
+		<tr>
+			<td>18. She was found in a furrow and is the daughter of Mother Earth</td>
+		</tr>
+		<tr>
+			<td>20. Lord Rama’s Brother who accompanied him and Sita to the forest</td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+
+<tr >
+			<th><strong>Down</strong></th>
+		</tr>
+				<tr><td>1. Servant who convinces Kaikeyi that Bharatha should rule and not Rama</td></tr>
+		<tr><td>2. Brother of monkey King Sugriva</td></tr>
+		<tr><td>4. Lord Rama and Sita built their house here during exile</td></tr>
+		<tr><td>8. Birthplace of Rama</td></tr>
+		<tr><td>9. Older son of Ram</td></tr>
+		<tr><td>11. Rama's brother who places Rama's wooden slippers on the throne during his exile</td></tr>
+		<tr><td>12. Valmiki created him with his yogic powers (second son of Ram and Sita)</td></tr>
+		<tr><td>13. Number of years Lord Rama and Sita exiled for</td></tr>
+		<tr><td>14. Brother of King of Lanka who joins Lord Rama</td></tr>
+		<tr><td>17. Eldest son of Ravana</td></tr>
+		<tr><td>19. No.of Wives of Ravana</td></tr>
+</table>
+</div>
+</div>
+
+</body>
+</html>
