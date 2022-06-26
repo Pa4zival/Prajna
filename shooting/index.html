@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Ram Ravan Battle</title>
+	<meta name="author" content="end3r" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<script src="./js/lib/mibbu.js"></script>
+	<script src="./js/game.js"></script>
+	<script src="./js/config.js"></script>
+	<script src="./js/input.js"></script>
+	<script src="./js/utils.js"></script>
+</head>
+<body>
+<div id="container">
+	<h1>Be Ram, Kill Ravan!</h1>
+	<div id="game"></div>
+	<div id="statbar">
+		<div id="statbar-left"><p>Score<span id="points">0</span></p></div>
+		<div id="statbar-center"><p>Level<span id="level">1</span></p></div>
+		<div id="statbar-right"><p>Lives</p><ul id="lives"><li>|</li><li>|</li><li>|</li></ul></div>
+	</div>
+
+	<div id="menu">
+		<img src="./img/frontinvaders.jpg" alt="Front Invaders" />
+		<ul>
+			<li id="menu-start"><span onclick="javascript:GAME.Menu('game',GAME.preload);">Start Game<br></span></li>
+			<li id="menu-howto"><span onclick="javascript:GAME.Menu('instructions');">How To Play<br></span></li>
+			<!--<li id="menu-about"><span onclick="javascript:GAME.Menu('about');"><span>About</span>Game</span></li>-->
+		</ul>
+		<p id="menu-aliens"></p>
+		<p id="menu-rocket"></p>
+		<p id="menu-social"></p>
+	</div>
+	<div id="howTo">
+		<p class="points">You are Ram and You should kill Ravan<br> <strong>Remember!</strong> You have limited arrows</p>
+		<p class="level">Kill all the Ravans in a row and go to the next level</p>
+		<p class="lives">You have three lives to save yourself from Ravan</p>
+		<p class="alien1">Ravan <strong>50</strong> Score</p>
+		<p class="alien2">Ravan<strong>70</strong> Score</p>
+		<p class="alien3">Ravan<strong>100</strong> Score</p>
+		<p class="player">You must kill all the Ravans!</p>
+		<p class="controls">
+			<span><strong>Instructions</strong></span>
+			<span>Right arrow - Moves Ram to right</span>
+			<span>Left arrow - Moves Ram to left</span>
+			<span>Spacebar - Pause&frasl;Resume</span>
+			<span>Z key or Up arrow - Shoot the arrow</span>
+		</p>
+		<span><span>&lsaquo;</span><a href = "index.html">Back</a></span>
+	</div>
+	<div id="message"></div>
+	<script>
+		var GAME_WIDTH = 800, GAME_HEIGHT = 500;
+		var Mibbu = new mibbu(GAME_WIDTH, GAME_HEIGHT, 'game');
+		GAME.Init();
+	</script>
+</div>
+</body>
+</html>
